@@ -102,7 +102,7 @@ const Events = () => {
     {
       id: 3,
       title: "Personality Development cum Communication Skill Enhancement Workshop",
-      date: "November 2025",
+      date: "November 2024",
       venue: "FN and FE Rooms",
       image: "events/pdcse.jpg",
       description: (
