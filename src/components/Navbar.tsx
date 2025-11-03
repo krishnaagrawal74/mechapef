@@ -29,17 +29,16 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg shadow-primary/10" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg shadow-primary/10" : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <img 
-              src={logo} 
-              alt="MechaPEF Logo" 
+            <img
+              src={logo}
+              alt="MechaPEF Logo"
               className="h-12 w-auto transition-transform duration-300 group-hover:scale-110"
             />
           </Link>
@@ -68,16 +67,15 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 animate-fade-in">
+          <div className="absolute top-20 left-0 w-full bg-black text-white z-50 shadow-lg animate-fade-in">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`block py-3 px-4 rounded-lg transition-all ${
-                  isActive(link.path)
+                className={`block py-3 px-5 border-b border-gray-800 transition-all ${isActive(link.path)
                     ? "bg-primary text-primary-foreground"
-                    : "hover:bg-muted"
-                }`}
+                    : "hover:bg-gray-900"
+                  }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -85,6 +83,7 @@ const Navbar = () => {
             ))}
           </div>
         )}
+
       </div>
     </nav>
   );
